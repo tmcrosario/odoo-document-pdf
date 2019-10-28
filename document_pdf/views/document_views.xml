@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- FORM VIEW -->
+    <record id="document_view_form"
+            model="ir.ui.view">
+        <field name="name">tmc.document.view.form</field>
+        <field name="model">tmc.document</field>
+        <field name="inherit_id"
+               ref="tmc.document_view_form" />
+        <field name="arch"
+               type="xml">
+            <button name="highlights_count_button"
+                    position="before">
+                <field name="pdf_url"
+                       invisible="True"/>
+                <button class="oe_inline oe_stat_button"
+                        type="object"
+                        string="View PDF"
+                        name="open_pdf"
+                        attrs="{'invisible': [('pdf_url', '=', False)]}"
+                        icon="fa-file-pdf-o text-danger"/>
+            </button>
+        </field>
+    </record>
+
+    <!-- TREE VIEW -->
+    <record id="document_view_tree"
+            model="ir.ui.view">
+        <field name="name">tmc.document.view.tree</field>
+        <field name="model">tmc.document</field>
+        <field name="inherit_id"
+               ref="tmc.document_view_tree" />
+        <field name="arch"
+               type="xml">
+            <field name="name"
+                   position="before">
+                <field name="pdf_url"
+                       invisible="True" />
+                <button type="object"
+                        class="pdf_icon"
+                        name="open_pdf"
+                        attrs="{'invisible': [('pdf_url', '=', False)]}"
+                        icon="fa-file-pdf-o text-danger" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
