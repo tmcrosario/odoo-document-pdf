@@ -14,7 +14,7 @@
                     position="before">
                 <field name="pdf_url"
                        invisible="True"/>
-                <button class="oe_inline oe_stat_button"
+                <button class="oe_stat_button"
                         type="object"
                         string="View PDF"
                         name="open_pdf"
@@ -38,6 +38,30 @@
                 <field name="pdf_url"
                        invisible="True" />
                 <button type="object"
+                        title="View PDF"
+                        class="pdf_icon"
+                        name="open_pdf"
+                        attrs="{'invisible': [('pdf_url', '=', False)]}"
+                        icon="fa-file-pdf-o text-danger" />
+            </field>
+        </field>
+    </record>
+
+    <!-- TREE VIEW (SIMPLE) -->
+    <record id="document_simple_view_tree"
+            model="ir.ui.view">
+        <field name="name">tmc.document.simple.view.tree</field>
+        <field name="model">tmc.document</field>
+        <field name="inherit_id"
+               ref="tmc.document_simple_view_tree" />
+        <field name="arch"
+               type="xml">
+            <field name="name"
+                   position="before">
+                <field name="pdf_url"
+                       invisible="True" />
+                <button type="object"
+                        title="View PDF"
                         class="pdf_icon"
                         name="open_pdf"
                         attrs="{'invisible': [('pdf_url', '=', False)]}"
