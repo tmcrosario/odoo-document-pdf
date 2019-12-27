@@ -7,28 +7,32 @@ class Document(models.Model):
     _name = 'tmc.document'
     _inherit = 'tmc.document'
 
-    pdf_url = fields.Char(compute='_compute_pdf_url', readonly=True)
+    pdf_path = fields.Char(compute='_compute_pdf_path_and_url', readonly=True)
 
-    def _get_path_and_url(self):
-        try:
-            repository_path = self.env['ir.config_parameter'].sudo().get_param(
-                'tmc.document.repository_path')
-            repository_url = self.env['ir.config_parameter'].sudo().get_param(
-                'tmc.document.repository_url')
-            file_name = self.name.replace('/', '-') + '.pdf'
-            return {
-                'file_path': repository_path + file_name,
-                'url': repository_url + file_name
-            }
-        except Exception:
-            return None
+    pdf_url = fields.Char(compute='_compute_pdf_path_and_url', readonly=True)
+
+    def get_path_and_url(self):
+        res = None
+        repository_path = self.env['ir.config_parameter'].sudo().get_param(
+            'tmc.document.repository_path')
+        repository_url = self.env['ir.config_parameter'].sudo().get_param(
+            'tmc.document.repository_url')
+        file_name = self.name.replace('/', '-') + '.pdf'
+        res = {
+            'path': repository_path + file_name,
+            'url': repository_url + file_name
+        }
+
+        return res
 
     @api.depends('document_type_id', 'dependence_id', 'number', 'period')
-    def _compute_pdf_url(self):
+    def _compute_pdf_path_and_url(self):
         for document in self:
+            document.pdf_path = None
             document.pdf_url = None
-            res = document._get_path_and_url()
-            if res and path.isfile(res['file_path']):
+            res = document.get_path_and_url()
+            if res and path.isfile(res['path']):
+                document.pdf_path = res['path']
                 document.pdf_url = res['url']
 
     def open_pdf(self):
