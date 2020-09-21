@@ -1,5 +1,5 @@
 # Odoo TMC Document PDF
-Odoo fields and functions for view document files in PDF on TMC addons
+Fields and functions for viewing PDF files in TMC addons.
 
 ## License
 
@@ -11,4 +11,4 @@ You should have received a copy of the GNU Affero General Public License along w
 
 ----
 
-<img src="https://www.tmcrosario.gob.ar/images/tmc_nuevo.png"/>
+<img align="left" src="https://iili.io/2ARo1R.png"/>
