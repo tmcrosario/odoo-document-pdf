@@ -3,69 +3,69 @@
 
     <!-- FORM VIEW -->
     <record id="document_view_form"
-            model="ir.ui.view">
+        model="ir.ui.view">
         <field name="name">tmc.document.view.form</field>
         <field name="model">tmc.document</field>
         <field name="inherit_id"
-               ref="tmc.document_view_form" />
+            ref="tmc.document_view_form" />
         <field name="arch"
-               type="xml">
+            type="xml">
             <button name="highlights_count_button"
-                    position="before">
+                position="before">
                 <field name="pdf_url"
-                       invisible="True"/>
+                    invisible="True" />
                 <button class="oe_stat_button"
-                        type="object"
-                        string="View PDF"
-                        name="open_pdf"
-                        attrs="{'invisible': [('pdf_url', '=', False)]}"
-                        icon="fa-file-pdf-o text-danger"/>
+                    type="object"
+                    string="View PDF"
+                    name="open_pdf"
+                    attrs="{'invisible': [('pdf_url', '=', False)]}"
+                    icon="fa-file-pdf-o text-danger" />
             </button>
         </field>
     </record>
 
     <!-- TREE VIEW -->
     <record id="document_view_tree"
-            model="ir.ui.view">
+        model="ir.ui.view">
         <field name="name">tmc.document.view.tree</field>
         <field name="model">tmc.document</field>
         <field name="inherit_id"
-               ref="tmc.document_view_tree" />
+            ref="tmc.document_view_tree" />
         <field name="arch"
-               type="xml">
+            type="xml">
             <field name="name"
-                   position="before">
+                position="before">
                 <field name="pdf_url"
-                       invisible="True" />
+                    invisible="True" />
                 <button type="object"
-                        title="View PDF"
-                        class="pdf_icon"
-                        name="open_pdf"
-                        attrs="{'invisible': [('pdf_url', '=', False)]}"
-                        icon="fa-file-pdf-o text-danger" />
+                    title="View PDF"
+                    class="pdf_icon"
+                    name="open_pdf"
+                    attrs="{'invisible': [('pdf_url', '=', False)]}"
+                    icon="fa-file-pdf-o text-danger" />
             </field>
         </field>
     </record>
 
     <!-- TREE VIEW (SIMPLE) -->
     <record id="document_simple_view_tree"
-            model="ir.ui.view">
+        model="ir.ui.view">
         <field name="name">tmc.document.simple.view.tree</field>
         <field name="model">tmc.document</field>
         <field name="inherit_id"
-               ref="tmc.document_simple_view_tree" />
+            ref="tmc.document_simple_view_tree" />
         <field name="arch"
-               type="xml">
+            type="xml">
             <field name="name"
-                   position="before">
+                position="before">
                 <field name="pdf_url"
-                       invisible="True" />
+                    invisible="True" />
                 <button type="object"
-                        title="View PDF"
-                        class="pdf_icon"
-                        name="open_pdf"
-                        attrs="{'invisible': [('pdf_url', '=', False)]}"
-                        icon="fa-file-pdf-o text-danger" />
+                    title="View PDF"
+                    class="pdf_icon"
+                    name="open_pdf"
+                    attrs="{'invisible': [('pdf_url', '=', False)]}"
+                    icon="fa-file-pdf-o text-danger" />
             </field>
         </field>
     </record>
