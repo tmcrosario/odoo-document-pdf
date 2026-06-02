@@ -24,8 +24,8 @@ Repo contains one module: `document_pdf`.
     into inherited views; `invisible` (not `column_invisible`) is correct — they are
     buttons, not column-hiding field nodes.
 - The file patches inherited views by `ref`; it contains no literal `<tree>`/`<list>`
-  tags, no `view_mode`, no `t-esc`, no `oe_chatter`, no `assets_backend`. The record
-  ids `document_view_tree` / `document_simple_view_tree` contain `_tree` but were left
+  tags, no `view_mode`, no `t-esc`, no `oe_chatter`, no `assets_backend`. The record ids
+  `document_view_tree` / `document_simple_view_tree` contain `_tree` but were left
   unchanged per the spec (renaming xmlids risks dangling cross-module refs).
 
 ### Security
@@ -71,10 +71,22 @@ Repo contains one module: `document_pdf`.
 
 ## Lint findings
 
-- (captured after pre-commit run below)
+pre-commit ran fully (ruff, ruff-format, prettier, pylint-odoo,
+odoo-pre-commit-hooks). Auto-fixers (ruff-format, prettier) were applied. Remaining
+reporter findings (non-blocking, follow-ups):
+
+- `manifest-required-author` (`document_pdf/__manifest__.py`): pylint-odoo's OCA rcfile
+  requires the author "Odoo Community Association (OCA)". This is a private TMC module,
+  not an OCA addon — expected and intentionally not changed.
+- `missing-readme`: OCA expects a `README.rst`. Not applicable to this private module;
+  left as-is.
+- Several `unknown-option-value` warnings come from the canonical OCA `.pylintrc`
+  listing message names not present in this pylint-odoo version — harmless, kept the
+  canonical file verbatim.
+
+Note: ruff/prettier/xmllint validate syntax/format only, NOT Odoo runtime API
+correctness — real API validation is deferred to the boot/test stage.
 
 ## Translations
 
 - Translation regeneration deferred to a later stage.
-</content>
-</invoke>

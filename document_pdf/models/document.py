@@ -4,7 +4,6 @@ from odoo import api, fields, models
 
 
 class Document(models.Model):
-
     _name = "tmc.document"
     _inherit = "tmc.document"
 
