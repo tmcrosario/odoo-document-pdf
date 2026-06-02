@@ -18,7 +18,7 @@
                     type="object"
                     string="View PDF"
                     name="open_pdf"
-                    attrs="{'invisible': [('pdf_url', '=', False)]}"
+                    invisible="not pdf_url"
                     icon="fa-file-pdf-o text-danger" />
             </button>
         </field>
@@ -41,7 +41,7 @@
                     title="View PDF"
                     class="pdf_icon"
                     name="open_pdf"
-                    attrs="{'invisible': [('pdf_url', '=', False)]}"
+                    invisible="not pdf_url"
                     icon="fa-file-pdf-o text-danger" />
             </field>
         </field>
@@ -64,7 +64,7 @@
                     title="View PDF"
                     class="pdf_icon"
                     name="open_pdf"
-                    attrs="{'invisible': [('pdf_url', '=', False)]}"
+                    invisible="not pdf_url"
                     icon="fa-file-pdf-o text-danger" />
             </field>
         </field>
