@@ -7,8 +7,6 @@ class Document(models.Model):
     _name = "tmc.document"
     _inherit = "tmc.document"
 
-    pdf_path = fields.Char(compute="_compute_pdf_path_and_url", readonly=True)
-
     pdf_url = fields.Char(compute="_compute_pdf_path_and_url", readonly=True)
 
     def get_path_and_url(self):
@@ -34,11 +32,9 @@ class Document(models.Model):
     @api.depends("document_type_id", "dependence_id", "number", "period")
     def _compute_pdf_path_and_url(self):
         for document in self:
-            document.pdf_path = None
             document.pdf_url = None
             res = document.get_path_and_url()
             if res and path.isfile(res["path"]):
-                document.pdf_path = res["path"]
                 document.pdf_url = res["url"]
 
     def open_pdf(self):
