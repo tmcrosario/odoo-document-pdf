@@ -1,13 +1,16 @@
 {
     "name": "TMC Document PDF",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "summary": "Fields and functions for view documents in PDF",
     "author": "Tribunal Municipal de Cuentas - Municipalidad de Rosario",
     "website": "https://www.tmcrosario.gob.ar",
     "license": "AGPL-3",
     "sequence": 150,
     "depends": ["tmc", "tmc_data"],
-    "data": ["views/document_views.xml"],
+    "data": [
+        "data/document_cron.xml",
+        "views/document_views.xml",
+    ],
     "installable": True,
     "application": True,
 }  # yapf: disable

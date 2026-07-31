@@ -27,13 +27,13 @@
         <field name="inherit_id" ref="tmc.document_view_list" />
         <field name="arch" type="xml">
             <field name="name" position="before">
-                <field name="pdf_url" invisible="True" />
+                <field name="has_pdf" invisible="True" />
                 <button
                     type="object"
                     title="View PDF"
                     class="pdf_icon"
                     name="open_pdf"
-                    invisible="not pdf_url"
+                    invisible="not has_pdf"
                     icon="fa-file-pdf-o text-danger"
                 />
             </field>
@@ -47,13 +47,13 @@
         <field name="inherit_id" ref="tmc.document_simple_view_list" />
         <field name="arch" type="xml">
             <field name="name" position="before">
-                <field name="pdf_url" invisible="True" />
+                <field name="has_pdf" invisible="True" />
                 <button
                     type="object"
                     title="View PDF"
                     class="pdf_icon"
                     name="open_pdf"
-                    invisible="not pdf_url"
+                    invisible="not has_pdf"
                     icon="fa-file-pdf-o text-danger"
                 />
             </field>
