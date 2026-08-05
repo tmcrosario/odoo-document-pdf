@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Overlay: flag some of tmc_data's demo documents as having a PDF so the
+         has_pdf-gated "View PDF" button shows in the list. No own records. -->
+    <record id="tmc_data.demo_document_res_dhh_2025" model="tmc.document">
+        <field name="has_pdf" eval="True" />
+    </record>
+
+    <record id="tmc_data.demo_document_dec_dem_2025" model="tmc.document">
+        <field name="has_pdf" eval="True" />
+    </record>
+
+    <record id="tmc_data.demo_document_dic_cm_2024" model="tmc.document">
+        <field name="has_pdf" eval="True" />
+    </record>
+
+    <record id="tmc_data.demo_document_exp_dhh_2023" model="tmc.document">
+        <field name="has_pdf" eval="True" />
+    </record>
+</odoo>
