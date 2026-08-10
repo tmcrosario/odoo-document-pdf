@@ -13,7 +13,6 @@ class Document(models.Model):
     has_pdf = fields.Boolean(default=False)
 
     def get_path_and_url(self):
-        res = None
         repository_path = (
             self.env["ir.config_parameter"]
             .sudo()
@@ -24,13 +23,14 @@ class Document(models.Model):
             .sudo()
             .get_param("tmc.document.repository_url")
         )
+        # Params are unset on fresh/dev DBs; degrade to no URL instead of TypeError
+        if not (repository_path and repository_url and self.name and self.period):
+            return None
         file_name = self.name.replace("/", "-") + ".pdf"
-        res = {
+        return {
             "path": repository_path + str(self.period) + "/" + file_name,
             "url": repository_url + str(self.period) + "/" + file_name,
         }
-
-        return res
 
     @api.depends("document_type_id", "dependence_id", "number", "period")
     def _compute_pdf_path_and_url(self):
