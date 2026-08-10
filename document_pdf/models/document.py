@@ -4,7 +4,6 @@ from odoo import api, fields, models
 
 
 class Document(models.Model):
-    _name = "tmc.document"
     _inherit = "tmc.document"
 
     pdf_url = fields.Char(compute="_compute_pdf_path_and_url", readonly=True)
