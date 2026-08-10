@@ -1,4 +1,4 @@
-# Claude Instructions for `odoo-document-pdf`
+# Agent conventions for `odoo-document-pdf`
 
 TMC Odoo 19.0 addon repository.
 
