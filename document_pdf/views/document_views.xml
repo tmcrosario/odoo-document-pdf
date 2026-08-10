@@ -27,7 +27,7 @@
         <field name="inherit_id" ref="tmc.document_view_list" />
         <field name="arch" type="xml">
             <field name="name" position="before">
-                <field name="has_pdf" invisible="True" />
+                <field name="has_pdf" column_invisible="True" />
                 <button
                     type="object"
                     title="View PDF"
@@ -35,6 +35,7 @@
                     name="open_pdf"
                     invisible="not has_pdf"
                     icon="fa-file-pdf-o text-danger"
+                    width="45px"
                 />
             </field>
         </field>
@@ -47,7 +48,7 @@
         <field name="inherit_id" ref="tmc.document_simple_view_list" />
         <field name="arch" type="xml">
             <field name="name" position="before">
-                <field name="has_pdf" invisible="True" />
+                <field name="has_pdf" column_invisible="True" />
                 <button
                     type="object"
                     title="View PDF"
@@ -55,6 +56,7 @@
                     name="open_pdf"
                     invisible="not has_pdf"
                     icon="fa-file-pdf-o text-danger"
+                    width="45px"
                 />
             </field>
         </field>
