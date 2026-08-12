@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="document_pdf.PdfPaneField">
+        <iframe t-if="pdfSrc" class="o_tmc_pdf_iframe" t-att-src="pdfSrc" title="PDF" />
+    </t>
+</templates>

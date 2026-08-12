@@ -14,6 +14,13 @@
     "demo": [
         "demo/document_pdf_demo.xml",
     ],
+    "assets": {
+        "web.assets_backend": [
+            "document_pdf/static/src/pdf_pane/pdf_pane_field.js",
+            "document_pdf/static/src/pdf_pane/pdf_pane_field.xml",
+            "document_pdf/static/src/pdf_pane/pdf_pane_field.scss",
+        ],
+    },
     "installable": True,
     "application": True,
 }  # yapf: disable

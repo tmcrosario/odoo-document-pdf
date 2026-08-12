@@ -8,15 +8,12 @@
         <field name="arch" type="xml">
             <button name="highlights_count_button" position="before">
                 <field name="pdf_url" invisible="True" />
-                <button
-                    class="oe_stat_button"
-                    type="object"
-                    string="View PDF"
-                    name="open_pdf"
-                    invisible="not pdf_url"
-                    icon="fa-file-pdf-o text-danger"
-                />
             </button>
+            <xpath expr="//sheet" position="after">
+                <div class="o_tmc_pdf_side" invisible="not pdf_url">
+                    <field name="pdf_url" widget="tmc_pdf_pane" nolabel="1" />
+                </div>
+            </xpath>
         </field>
     </record>
 
