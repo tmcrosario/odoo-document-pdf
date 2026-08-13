@@ -16,7 +16,8 @@ class DocumentPdfController(http.Controller):
             return request.not_found()
         with open(res["path"], "rb") as pdf:
             data = pdf.read()
-        filename = os.path.basename(res["path"])
+        # Strip quotes so they cannot break the Content-Disposition filename.
+        filename = os.path.basename(res["path"]).replace('"', "")
         headers = [
             ("Content-Type", "application/pdf"),
             ("Content-Disposition", f'inline; filename="{filename}"'),
