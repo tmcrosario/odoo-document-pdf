@@ -1,15 +1,22 @@
 # Odoo TMC Document PDF
 
-Fields and functions for viewing PDF files in TMC addons.
+![Odoo 19.0](https://img.shields.io/badge/Odoo-19.0-714B67)
+[![Licencia: AGPL-3](https://img.shields.io/badge/licencia-AGPL--3-blue.svg)](LICENSE)
 
-## License
+Campos y funciones para visualizar documentos PDF en los addons del TMC.
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+## Módulos
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+| Módulo                          | Versión    | Descripción                                   |
+| ------------------------------- | ---------- | --------------------------------------------- |
+| [`document_pdf`](document_pdf/) | 19.0.1.0.2 | Campos y funciones para ver documentos en PDF |
 
-You should have received a copy of the GNU Affero General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
+## Instalación
 
-----
+Dependencias: [`odoo-tmc`](https://github.com/tmcrosario/odoo-tmc), [`odoo-tmc-data`](https://github.com/tmcrosario/odoo-tmc-data) (privado).
 
-<img align="left" src="https://iili.io/2ARo1R.png"/>
+Agregar a la ruta de addons, actualizar aplicaciones e instalar «TMC Document PDF».
+
+## Licencia
+
+[AGPL-3](LICENSE). Autor: Tribunal Municipal de Cuentas - Municipalidad de Rosario (<https://www.tmcrosario.gob.ar>).
